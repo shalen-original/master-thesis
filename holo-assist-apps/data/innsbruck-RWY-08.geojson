@@ -1,0 +1,68 @@
+{
+    "type": "FeatureCollection",
+    "name": "innsbruck-RWY-08",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "RWY1",
+                "Altitude [m]": 581.15588
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.330904344889175,
+                    47.25899560415298
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "RWY2",
+                "Altitude [m]": 581.1521
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.330994291893026,
+                    47.258605518166775
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "RWY3",
+                "Altitude [m]": 581.1521
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.357085590316892,
+                    47.2614253195288
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "RWY4",
+                "Altitude [m]": 581.1521
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.356993481746226,
+                    47.26181848938498
+                ]
+            }
+        }
+    ]
+}

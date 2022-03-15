@@ -1,0 +1,15 @@
+{
+  "planeMesh": [ 1.25499678, -0.81999886, 1.18999982 ],
+  "planeCenter": [ 1.38099384, -1.07900059, 0.8080007 ],
+  "projection": {
+    "type": "CYLINDER",
+    "cylinderCenter": [ 1.38099384, -1.07900059, 1.1680032 ],
+    "cylinderRadius": 2.35,
+    "eyePoint": [ 1.56100225, -0.929997861, 1.24600971 ]
+  },
+  "spacePins": {
+    "DA42-1": [ 0, 0, 0 ],
+    "DA42-2": [ 2.69, 0, 0.0125 ]
+  },
+  "isPlaneCenterChildOfProjectionEyePoint": false
+}

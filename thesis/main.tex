@@ -1,0 +1,62 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+\documentclass[headsepline,footsepline,footinclude=false,fontsize=12pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook}
+
+%\pdfcompresslevel=0
+%\pdfobjcompresslevel=0
+
+\input{settings}
+
+\newcommand*{\getUniversity}{Technical University of Munich}
+\newcommand*{\getFaculty}{Department of Informatics}
+\newcommand*{\getTitle}{HoloAssist: Integrating an Augmented Reality Headset in a Flight Simulator}
+\newcommand*{\getTitleGer}{HoloAssist: Integration eines Augmented-Reality-Headsets in einen Flugsimulator}
+\newcommand*{\getAuthor}{Matteo Nardini}
+\newcommand*{\getDoctype}{Master's Thesis in Informatics}
+\newcommand*{\getSupervisor}{Prof.\ Gudrun Klinker, Ph.D.}
+\newcommand*{\getSubmissionDate}{15th March 2022}
+\newcommand*{\getSubmissionLocation}{Munich}
+
+\begin{document}
+
+\selectlanguage{english}
+\pagenumbering{alph}
+
+\input{pages/cover}
+
+\frontmatter{}
+
+\input{pages/title}
+\input{pages/disclaimer}
+%\input{pages/acknowledgements} % TODO: if you don't have anyone to thank for or don't wish to publish it, comment this line out.
+\input{pages/abstract}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\microtypesetup{protrusion=true}
+
+\mainmatter{}
+
+\input{chapters/01_introduction_and_related_work}
+\input{chapters/02_holoassist}
+\input{chapters/03_holoassist_apps}
+\input{chapters/04_evaluation}
+\input{chapters/05_conclusions_and_future_work}
+
+%\input{chapters/ZZ_samples.tex}
+
+\begin{appendices}
+
+\input{pages/appendix}
+
+\end{appendices}
+
+%\microtypesetup{protrusion=false}
+%\listoffigures{}
+%\listoftables{}
+%\microtypesetup{protrusion=true}
+\printglossaries{}
+\printbibliography{}
+
+\input{pages/chiusa.tex}
+
+\end{document}

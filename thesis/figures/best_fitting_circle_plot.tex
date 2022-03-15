@@ -1,0 +1,48 @@
+\begin{filecontents}{bfc_real_points.dat}
+  -3.786 -0.5533
+  -3.114 -1.833
+  -3.533 -1.192
+  -3.116 2.329
+  -3.424 1.926
+  -3.310 2.07
+  -3.392 1.963
+  -3.679 1.449
+  -3.890 0.3203
+  -3.525 -1.217
+  -3.786 -0.553
+  -3.114 -1.833
+  -3.533 -1.192
+  -3.116 2.329
+  -3.424 1.926
+  -3.310 2.070
+  -3.392 1.963
+  -3.679 1.449
+  -3.890 0.320
+  -3.525 -1.217
+  -1.050 -2.874
+  -2.193 -2.565
+  -2.854 -2.118
+  -1.777 3.324
+  -2.018 3.154
+  -2.537 2.840
+\end{filecontents}
+
+\begin{tikzpicture}
+  \definecolor{myblue}{RGB}{13,98,153}
+  \definecolor{myorange}{RGB}{255,153,0}
+
+  \begin{axis}[
+      width=0.48\textwidth,
+      height=0.48\textwidth,
+      xmin=-5, xmax=5,
+      ymin=-5, ymax=5,
+      xlabel={X},
+      ylabel={Z}
+    ]
+    \addplot+[only marks, myblue] table [x index=0,y index=1] {bfc_real_points.dat};
+    \addlegendentry{Measured points};
+    \draw[myorange] (axis cs:0,0.2372135716) circle [radius=3.815579435];
+    \addlegendimage{line width=0.2mm,color=myorange}
+    \addlegendentry{Best fitting circle};
+  \end{axis}
+\end{tikzpicture}

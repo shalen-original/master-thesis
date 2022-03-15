@@ -1,0 +1,22 @@
+
+[MESSAGES CONTROL]
+
+disable=raw-checker-failed,
+        bad-inline-option,
+        locally-disabled,
+        file-ignored,
+        suppressed-message,
+        useless-suppression,
+        deprecated-pragma,
+        use-symbolic-message-instead,
+        C0114, C0115, R0903, C0116, R0913, R0801
+
+[BASIC]
+
+good-names=i,
+           j,
+           k,
+           ex,
+           Run,
+           _,
+           id, x, y, z

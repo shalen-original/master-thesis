@@ -1,0 +1,27 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Conclusions and future work}\label{chapter:conclusions_and_future_work}
+
+In conclusion, it can be said that the problem statement reported at the beginning of this document has been adequately investigated. A rapid prototyping platform for developing \gls{AR} experiences inside a fixed-platform flight simulator has been successfully developed and the results obtained with it for the Innsbruck airport augmentations are encouraging. This platform proved to be flexible and reasonably simple to use and pilots reported a generally positive feedback for the usage of \gls{AR} in a fixed-wing aircraft.
+
+Nevertheless, the questionnaires seem to suggest only a small (or at best moderate) improvement, and a legitimate question is whether it is sufficient to justify the costs associated with adding \gls{AR} solutions to an airplane cockpit. Moreover, the Hololens by itself is not reliable enough for usage in an actual aircraft, and integrating it into one would require significant additional work, rising the associated costs even more.
+
+\section{Future works}
+
+Although the achieved result is satisfactory, there are a number of improvements that could be implemented in following versions of \gls{holoassist}.
+
+The single biggest one is to remove the limitation on line meshes: this should be possible, as the only thing preventing it is the visibility issue after projecting all the vertices to the cylinder surface and a very similar problem already has a solution in computer graphics\cite{khronos_group_depth_nodate}. A possible approach could be to map a texture to the cylinder surface and use this texture as a depth buffer to decide the final color of each pixel. This would also allow the terrain augmentation for the Innsbruck airport to have proper occlusion and to only show the side of the mountains that is currently visible from the pilot's perspective.
+
+Another set of improvements regards the representation that was chosen for \gls{holoassist}'s \gls{API}. It currently has two main issues that could be addressed:
+
+\begin{enumerate}
+    \item The local rotation of a \texttt{GeoFixedVertex} can only be represented as Euler angles. Since quaternions are a common representation for rotations (and offer a number of advantages), it is possible to run into the situation in which an \gls{holoassistapp} computes a rotation quaternion, converts it to Euler angle and sends it via the \gls{API} just for \gls{holoassist} to immediately convert it back to a quaternion. This could be avoided by allowing to represent the local rotation with a quaternion also in the \gls{API}. However, since quaternions tend to be less known outside the field of computer graphics, the possibility of using Euler angles should not be removed.
+    \item A lot of information is currently repeated. In many cases, most vertices share either the same topocentric origin or the same local rotation, but currently every vertex has to write this information explicitly. This could be improved by allowing users to omit some of these fields on some of the vertices: the missing field would either default to a zero value or could use the same value as the last vertex that specified them.
+\end{enumerate}
+
+Another improvement regarding the \gls{API} could be to move away from its current transport layer, \gls{UDP}. It was chosen due to its simplicity and to the fact that it is already commonly used in flight simulators. However, this results in disadvantages like the necessity of implementing a custom wire protocol and the difficulty in relaying back to the caller a response on whether the \gls{API} invocation was successful or produced some errors. Switching from \gls{UDP} to another protocol, like TCP, and evaluating higher-level protocols like HTTP could significantly improve quality of the \gls{API} (although at the cost of additional complexity for users with limited software development experience).
+
+A final update would be to enable \gls{holoassist} to display a third type of augmentations, head-fixed augmentations. These would allow to display information like speed and altitude, which have been requested by most of the pilots that evaluated the augmentations for the Innsbruck approach and would therefore likely prove to be very useful.
+
+Besides the improvement for \gls{holoassist}, the suggestions reported in \autoref{sec:final_remarks} offer a number of ideas for additional \glspl{holoassistapp} that could be developed and tested in future projects.

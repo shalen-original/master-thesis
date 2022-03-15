@@ -1,0 +1,94 @@
+% refer to https://en.wikibooks.org/wiki/LaTeX/Glossary for acronyms and glossary entries
+
+\newacronym{AR}{AR}{augmented reality}
+\newacronym{VR}{VR}{virtual reality}
+\newacronym{HMD}{HMD}{head-mounted display}
+\newacronym{HUD}{HUD}{head-up display}
+\newacronym{FOV}{FOV}{field of view}
+\newacronym{IMU}{IMU}{inertial measurement unit}
+\newacronym{eVTOL}{eVTOL}{electric vertical take-off and landing aircraft}
+\newacronym{WLT}{WLT}{World Locking Tools library}
+\newacronym{CAD}{CAD}{computer aided design}
+\newacronym{ICP}{ICP}{iterative closest point}
+\newacronym[description={\glslink{enu}{East North Up}}]{ENU}{ENU}{East North Up}
+\newacronym{ECEF}{ECEF}{Earth-centered, Earth-fixed}
+\newacronym{CRS}{CRS}{coordinate reference system}
+\newacronym{PEP}{PEP}{projection eye point}
+\newacronym{GIS}{GIS}{geographic information system}
+\newacronym[plural=GF-ELMes, longplural=geo-fixed external line meshes]{gfelm}{GF-ELM}{geo-fixed external line mesh}
+\newacronym{TCAS}{TCAS}{traffic collision avoidance system}
+\newacronym{API}{API}{application programming interface}
+\newacronym{UDP}{UDP}{user datagram protocol}
+
+\newglossaryentry{holoassist}
+{
+    name = {HoloAssist},
+    description = {
+        A Hololens application developed in Unity that allows to easily create augmented reality experiences to be shown in a fixed-platform flight simulator. It exposes a high-level API that can be used to draw \gls{geofixedaug} and \gls{planefixedaug}
+    }
+}
+
+\newglossaryentry{holoassistapp}
+{
+    name = {HoloAssist App},
+    description = {
+        A script, written in an arbitrary programming language, that uses the \gls{holoassist} API to create some augmented reality experience
+    }
+}
+
+\newglossaryentry{geofixedaug}
+{
+  name = {geo-fixed augmentation},
+  description = {
+      One of the two types of augmentations displayed by \gls{holoassist}. They consist in an arbitrary 3D mesh positioned at some geographical point. \gls{holoassist} does all the computation required to shown them in the correct geographical position when looking from the flight simulator cockpit's window
+  },
+}
+
+\newglossaryentry{planefixedaug}
+{
+    name = {plane-fixed augmentation},
+    description = {
+        One of the two types of augmentations displayed by \gls{holoassist}. They consist in an arbitrary 3D mesh
+        positioned at some fixed point inside the flight simulator cockpit
+    }
+}
+
+\newglossaryentry{remoteunityeditor}
+{
+    name = {remote Unity editor},
+    description = {
+        A developer tool that allows to move and rotate a virtual 3D object in a Unity application running on the Hololens without having to recompile/redeploy the project. It also allows to retrieve the current pose of a \texttt{GameObject}
+    }
+}
+
+\newglossaryentry{epsg4979}
+{
+    name = {EPSG:4979},
+    description = {
+        A commonly used \acrlong{CRS} based on latitude, longitude and altitude. See \autoref{section:geodesyfundamentals}
+    }
+}
+
+\newglossaryentry{epsg4978}
+{
+    name = {EPSG:4978},
+    description = {
+        A commonly used \acrlong{ECEF} \acrlong{CRS}. See \autoref{section:geodesyfundamentals}
+    }
+}
+
+\newglossaryentry{enu}
+{
+    name = {\glslink{ENU}{East North Up coordinate reference system}},
+    description = {
+        A commonly used topocentric \acrlong{CRS}. See \autoref{section:geodesyfundamentals}
+    }
+}
+
+\newglossaryentry{planeENU}
+{
+    name = {airplane \gls{ENU} \gls{CRS}},
+    description = {
+        An \acrlong{ENU} \acrlong{CRS} centered at the current airplane's geographical position (as computed by the flight simulator)
+    }
+}

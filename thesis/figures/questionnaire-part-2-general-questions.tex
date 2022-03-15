@@ -1,0 +1,61 @@
+\begin{tikzpicture}
+    \definecolor{myred}{RGB}{218,32,0}
+    \definecolor{myredfill}{RGB}{255,212,204}
+    \definecolor{myorange}{RGB}{255,153,0}
+    \definecolor{myorangefill}{RGB}{255,235,204}
+    \definecolor{mygreen}{RGB}{0,184,0}
+    \definecolor{mygreenfill}{RGB}{202,255,202}
+    \definecolor{mycyan}{RGB}{5,154,199}
+    \definecolor{mycyanfill}{RGB}{206,241,253}
+    \definecolor{myblue}{RGB}{13,98,153}
+    \definecolor{mybluefill}{RGB}{208,234,250}
+
+    \pgfplotsset{
+        every axis/.style={
+            width=0.8\textwidth,
+            height=0.8\textwidth,
+            xbar, xmin=0, xmax=6,
+            bar width=4mm,
+            ytick = {0, 1, 2, 3},
+            yticklabels = {
+                Assuming that an equal level\\of reliability is reached\,\\would the Hololens be better\\than instrumentation currently\\available in commercial aircrafts?,
+                Would you want this kind\\of technology integrated in\\the planes you usually fly?,
+                With significantly worse\\visibility\, would you want\\to use the Hololens?,
+                With significantly better\\visibility\, would you want\\to use the Hololens?,
+            },
+            yticklabel style={font=\scriptsize, align=right},
+            ytick style = {draw = none},
+            xtick = \empty,
+            nodes near coords,
+            nodes near coords style={font=\scriptsize},
+            legend pos = south east,
+            legend style={
+                font=\scriptsize,
+                row sep=1mm
+            },
+        }    
+    }
+
+    \begin{axis}
+        \addplot+[black, fill=mygreenfill] coordinates {
+            (0, 3)
+            (0, 2)
+            (0, 1)
+            (1, 0)
+        };
+        \addplot+[black, fill=myorangefill] coordinates {
+            (4, 3)
+            (0, 2)
+            (0, 1)
+            (0, 0)
+        };
+        \addplot+[black, fill=mybluefill] coordinates {
+            (1, 3)
+            (5, 2)
+            (5, 1)
+            (4, 0)
+        };
+        \legend{I don't know, No, Yes}
+    \end{axis}
+
+\end{tikzpicture}
